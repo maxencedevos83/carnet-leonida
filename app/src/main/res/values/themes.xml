@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.Leonida" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">#FF6F61</item>
+        <item name="android:navigationBarColor">#FFFAF7</item>
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+</resources>
