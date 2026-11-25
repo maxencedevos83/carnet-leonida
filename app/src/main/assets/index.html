@@ -60,7 +60,8 @@ main{padding:18px 0 40px}
 .code{font:700 18px/1.4 Archivo,system-ui,sans-serif;letter-spacing:.08em;margin-top:6px;color:var(--ink);background:var(--done);border-radius:10px;padding:6px 10px;display:inline-block;word-spacing:.15em}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .tag{font-size:13px;font-weight:700;border-radius:8px;padding:2px 8px;background:var(--done);color:var(--soft)}
-.tag.rat{background:var(--hot);color:#fff}.tag.com{background:transparent;border:1px dashed var(--soft)}.tag.ue{background:var(--sun);color:#3a2300}
+.tag.rat{background:var(--hot);color:#fff}.tag.com{background:transparent;border:1px dashed var(--soft)}.tag.ue{background:var(--sun);color:#3a2300}.tag.new{background:var(--sea);color:#fff}.tag.maj{background:transparent;border:1px solid var(--sea);color:var(--sea)}
+.upd{display:inline-block;margin-top:10px;background:#1d0b1a;color:#fff;font-weight:700;font-size:14px;border-radius:99px;padding:6px 14px;border:0;cursor:pointer;min-height:36px;font-family:inherit}
 .grp{font:700 13px Archivo,system-ui,sans-serif;color:var(--soft);margin:22px 0 8px}
 .empty{text-align:center;color:var(--soft);padding:40px 0}
 footer{border-top:1px solid var(--line);padding:24px 0 48px;font-size:14px;color:var(--soft)}
@@ -84,7 +85,7 @@ footer ul{padding-left:18px}
 <path d="M129 71 C120 64 110 65 103 70 C112 67 120 68 129 73Z M129 71 C135 62 146 61 153 65 C145 64 137 67 130 74Z M129 71 C138 74 144 80 146 88 C141 81 135 77 130 74Z M129 71 C124 77 120 84 119 92 C123 84 127 79 131 74Z"/></g>
 </svg>
 <div class="wrap">
-<div><h1>Carnet de Leonida</h1><p>Secrets, planques, trésors et priorités de GTA VI, regroupés et à cocher.</p></div>
+<div><h1>Carnet de Leonida</h1><p>Secrets, planques, trésors et priorités de GTA VI, regroupés et à cocher.</p><button class="upd" id="updb">Mis à jour le 25 nov.</button></div>
 <div><div class="big"><b id="pct">0 %</b><span id="cnt">0 / 0 repérés</span></div><div class="bar"><i id="gbar"></i></div></div>
 </div>
 </header>
@@ -96,8 +97,18 @@ footer ul{padding-left:18px}
 <footer class="wrap">
 <p><b>Légende :</b> <span class="tag rat">Ratable</span> à faire avant un point de non-retour · <span class="tag com">Communauté</span> trouvé par des joueurs, pas encore confirmé par les grands guides · <span class="tag ue">Ultimate</span> réservé à l'édition Ultimate. Les noms de lieux, missions et objets sont en VO (anglais), comme dans les guides.</p>
 <p>Ta progression est enregistrée dans ce navigateur, sur ce téléphone uniquement.</p>
-<p><b>Sources</b> (infos recoupées au 24/11/2026, les guides sont encore en cours de rédaction) :</p>
+<p><b>Sources</b> (infos recoupées au 25/11/2026, les guides sont encore en cours de rédaction) :</p>
 <ul>
+<li><a href="https://www.pushsquare.com/guides/gta-6-vice-city-easter-egg-walkthrough">Push Square — portail Vice City pas à pas (ordre des sous-stations)</a></li>
+<li><a href="https://www.redbull.com/us-en/gta-6-easter-eggs">Red Bull — easter eggs et secrets</a></li>
+<li><a href="https://www.forbes.com/sites/paultassi/2026/11/23/a-gta-6-player-finds-tommy-vercettis-shirt-portal-to-original-vice-city/">Forbes — la découverte de Memeio</a></li>
+<li><a href="https://www.ladbible.com/entertainment/gaming/gta-6-easter-eggs-video-game-vice-city-386411-20261124">LADbible — emplacement du portail</a></li>
+<li><a href="https://gamerant.com/gta-6-it-the-clown-easter-egg-secret-location-find/">Game Rant — le clown du Haymarket</a></li>
+<li><a href="https://www.aol.com/articles/vice-city-portal-hidden-mario-070303000.html">AOL — casquettes Mario</a></li>
+<li><a href="https://www.pushsquare.com/guides/gta-6-gellhorn-missing-tourists-locations">Push Square — touristes disparus</a></li>
+<li><a href="https://gamesfuze.com/guides/how-to-get-legendary-weapons-in-gta-6-early/">Gamesfuze — armes uniques</a></li>
+<li><a href="https://beebom.com/gta-6-best-money-spots/">Beebom — planques à cash</a></li>
+<li><a href="https://thegta6news.com/news/gta-6-easter-eggs">The GTA 6 News — clins d'œil cinéma</a></li>
 <li><a href="https://www.pushsquare.com/guides/gta-6-guide">Push Square — guide GTA 6 complet</a></li>
 <li><a href="https://www.redbull.com/gb-en/gta-6-beginners-guide">Red Bull — guide débutant</a></li>
 <li><a href="https://www.gtabase.com/gta-6/articles/day-one-in-leonida-what-to-do-in-your-first-hour-in-gta-6">GTABase — la première heure</a></li>
@@ -131,22 +142,40 @@ const S=[
 {id:"secrets",n:"Planques & secrets",t:"Planques et lieux secrets",p:"Les découvertes qui font parler depuis la sortie. Celles marquées Communauté viennent de joueurs et peuvent varier.",i:[
 ["Le garage du complotiste","Belville, Leonard County","La maison vue dans une photo cachée de San Andreas Definitive Edition existe vraiment. Entre dans le garage : un homme y est persuadé de vivre dans un jeu vidéo (PNJ identiques, portes vides, frontières infranchissables) et parle de « J » et « L ».",""],
 ["Le grand prix des panneaux Peewees","4 panneaux dans 4 comtés","Scanne avec WAiNK : Balsero (Vice-Dale, au NO de Randy's Leonida Auto World, sur US-10) · nord de Grassrivers (Mariana, le long de l'US-82) · Waning Sands (Leonard, SR-27, au sud de One-Eyed Willie's) · ouest du Mount Kalaga National Park (Lummox, US-628). Les lettres cachées par les poulets noirs donnent BELVILLE : va au Peewees de Belville, parle au gérant > « Collect Prize ». Récompense : t-shirt et casquette.",""],
-["Le laboratoire souterrain et l'alien","Entrée de l'installation de recherche (marquée sur la carte)","Code 2314 sur le pavé près de la porte, ascenseur vers le labo, énigme des boutons, puis un verre de lait dans une salle au bout d'un long tunnel pour libérer l'alien. Porte-le dehors : une soucoupe détruit trois voitures du gouvernement.","com"],
-["Enlèvement par une soucoupe","Autour de Port Gellhorn","Entre 2 h et 3 h du matin (heure du jeu), approche-toi de la soucoupe pour être aspiré. Écran blanc jusqu'au lendemain.","com"],
-["Le nid d'œufs de Pâques","Plus haute tour radio de South Feistdale County","Environ 7 min d'escalade. Prends un œuf coloré dans le nid et lance-le : une petite cinématique le montre s'écraser sur le pare-brise d'une voiture.","com"],
+["Sauver l'alien (suite de l'enlèvement)", "Vaisseau, puis installation de recherche du sud de Leonida", "Après l'enlèvement, dors jusqu'à te réveiller dans une salle blanche du vaisseau. Passe discrètement la salle des œufs, regarde la maquette du système solaire (elle désigne un lieu de Leonida), aligne tous les voyants du panneau de contrôle, puis place une bouteille de lait dans la machine. À l'installation de recherche, tape le code 2314 et refais la même énigme : tu obtiens un alien vivant. Sors-le, son vaisseau vient le chercher. Récompense d'après les joueurs : bonus permanent de santé, d'endurance et de Focus.", "maj"],
+["Enlèvement par une soucoupe", "Route de campagne à l'est de Port Gellhorn, près du Starlet Motel (Kelly County)", "À partir du chapitre 2, vers 2 h du matin : une voiture abandonnée, portes ouvertes, phares allumés et alarme hurlante. Suis la piste dans les bois et libère la femme qui flotte dans un rayon de lumière. Elle te demande de ramener sa voiture : sur le retour, l'OVNI t'intercepte et tu te réveilles 3 jours plus tard. Trophée caché « The Truth Is Out There ». Si la voiture n'est pas là, réessaie une autre nuit.", "maj,Chap. 2"],
+["Le nid d'œufs de Pâques", "Plus haute tour radio, South Vice-Dale County", "Environ 7 min d'escalade (passe d'abord la clôture). Prends un œuf dans le nid et lance-le avec la jauge de puissance au maximum : cinématique secrète, l'œuf s'écrase sur un pare-brise. Le sommet sert aussi de départ de saut BASE, plus rapide pour redescendre.", "maj"],
 ["Le streamer perché","Sommet d'une autre grande tour radio","Parle-lui une fois en haut, il évoque « Kelly Explores ».","com"],
-["Voler un jet par la rampe","Base militaire de Leonida","Fais le tour du périmètre pour trouver la rampe latérale, prends de l'élan avec un véhicule rapide et saute à l'intérieur.","com"],
-["Le cercle de pierres","Sommet de la grande montagne, extrême nord","Un cercle façon Stonehenge. Son rôle n'est pas encore connu.","com"],
+["Tank et jet de la base militaire", "Mile Zero Air Station", "Accessible dès la fin de « Gone Fishing », en voiture. Attends-toi à une vraie résistance, emporte de bonnes armes. Voler le tank débloque le trophée caché Challenging Tank, mais il a un traceur militaire : la police sait toujours où tu es. Des joueurs signalent aussi une rampe latérale pour sauter dans la base avec un véhicule rapide.", "maj"],
+["Le monument et les cercles de pierres", "Manifest Canyon (Kelly County) et sommet du Mount Kalaga", "Près du Monument of Leonidan Supremacy, la manette vibre et émet des bips façon morse. Des cercles de pierres se trouvent au sommet du Mount Kalaga. Mystère pas encore résolu.", "maj,com"],
 ["La météorite fumante","Zone montagneuse du nord","Approche du cratère pour ramasser la météorite, puis revends-la au prêteur sur gages ou en ligne dans le jeu.","com"],
-["Le Skunk Ape (Bigfoot local)","Marais au sud de Cottonmouth Lake / de Watson Bay","Suis la traînée de brume verte jusqu'à un arbre avec une effigie humaine, sors de la voiture pour entendre le grognement. Lié aux missions de Kirk (Strangers & Freaks).","com"],
-["L'appartement de Dexter","Washington Island, est de Vice City","Petit immeuble bleu clair avec un escalier cylindrique côté sud, 2e étage, dernier appartement à gauche. Le bateau « Slice of Life » est amarré à l'ouest.","com"],
-["Sauvetage d'un chien en jet-ski","Au large des côtes","Nage très loin en mer jusqu'à la rencontre aléatoire, tu peux ensuite rouler avec le chien.","com"],
-["Le crabe géant","Pièces fermées de bâtiments accessibles","Une embuscade surprise : visite les intérieurs jusqu'à tomber dessus.","com"],
+["Le Skunk Ape (Bigfoot local)", "Gullet Marsh, au sud de Gambit Bay (Grassrivers)", "Trouve un prospectus (dès le chapitre 1, il y en a un au Skeeter's Bar de Hamlet) et appelle Kirk pour lancer « Search for the Skunk Ape ». La nuit uniquement : la bête mange une carcasse de cerf sur un chemin de gravier. Suis-la jusqu'à un sanctuaire-totem dont les vapeurs t'endorment. Récompense : un reportage Weazel News sur la télé de chez Jason.", "maj"],
+["L'appartement de Dexter", "Washington Island, près de Top Fun Drones (Vice Beach)", "L'appartement ne s'ouvre pas : monte sur le toit pour trouver une caisse à outils « kit du tueur » (seringue, couteau, scotch, corde). Le bateau façon « Slice of Life » est amarré à la jetée. Une pièce tapissée de plastique est aussi signalée dans le sud de Key Lento.", "maj"],
+["Cool Dog, le chien en jet-ski", "En pleine mer, par ex. Gambit Bay", "Va loin au large, saute à l'eau et attends les aboiements. Reste avec lui jusqu'à une île isolée pleine de chiens et de jouets : il déterre un portefeuille de 1 218 $, et des lunettes de soleil t'attendent dans une boîte près d'un bateau retourné. Un 2e jet-ski te ramène.", "maj"],
+["Le crabe mutant géant", "Station de recherche / maison de Gullet Marsh", "Rétablis le courant au boîtier à fusibles dehors, lis le journal de recherche sur l'ordinateur, puis détourne le regard de l'écran : un crabe géant attaque, avec sa propre cinématique.", "maj"],
 ["Le mystère du Chiliad","Camion qui circule ou stationne","Approche-toi pour lire les messages ; le QR code se scanne avec un vrai téléphone.","com"],
 ["Le journal de l'attaque alien","Cabane de la région de Grass Rivers","Un journal de GTA 5 avec un gros titre sur une attaque extraterrestre.","com"],
-["Le chapeau d'Arthur Morgan","Vide-greniers des quartiers","Repère les ballons accrochés le long des rues. Une fois acheté, il reste dans ta garde-robe.","com"],
+["Le chapeau d'Arthur Morgan", "Vide-greniers et marché aux puces", "Repère les ballons accrochés le long des rues. Un chapeau de cowboy à 5 $, avec la même corde nouée que celui d'Arthur. Une fois acheté, il reste dans ta garde-robe.", "maj"],
 ["Trouver les pièces cachées","Partout","Dans une boutique, avance vers les portes du fond : la minimap révèle pièce cachée, escalier ou porte fermée. Sur la carte, les bâtiments bleu foncé ont un intérieur, les bleu clair sont du décor.",""],
-["Lire les codes de coffre en mode Focus","Partout","Clique les deux sticks : ennemis en rouge, objets en jaune, cash en vert. Sert à repérer les notes avec les codes de coffre. Porte blanche = entrée possible, rouge = alarme.",""]]},
+["Lire les codes de coffre en mode Focus","Partout","Clique les deux sticks : ennemis en rouge, objets en jaune, cash en vert. Sert à repérer les notes avec les codes de coffre. Porte blanche = entrée possible, rouge = alarme.",""],
+["Le portail vers le Vice City de 2002", "Départ : Badger R&D Tower, Key Lento", "Actionne l'interrupteur et appuie sur le bouton pour faire apparaître le logo du Malibu Club à la télé. Les lettres sur les murs des 12 sous-stations LPL forment « Life is passing me by », un code de triche de Vice City (une affiche « Lose track of time » le confirme). Active-les dans le bon ordre avec leurs boutons et leviers, sans voyage rapide (l'hélico est conseillé, attention à l'atterrissage). Après un SMS, va au réacteur 2 de la centrale LPL Turtle Head, à l'est de Hamlet (sud de Vice-Dale County), entre 19 h et 6 h : un portail violet t'envoie dans le Vice City d'origine, avec Kent Paul. Récompenses : la chemise hawaïenne de Tommy Vercetti et sa vieille moto. L'ordre exact des sous-stations est dans le guide Push Square (lien en bas de page).", "new"],
+["Les casquettes J et L façon Mario", "Ruines de Lummox County (nord de Leonida)", "Fume un bang, grimpe les ruines et entre dans le panache de fumée. Tu débloques une casquette rouge « J » pour Jason et une verte « L » pour Lucia.", "new,com"],
+["L'ascenseur hanté du Haymarket Hotel", "Vice Beach, à l'ouest d'Ocean Beach", "Après minuit (vu vers 4 h, pas à 20 h). Dans le hall, l'ascenseur de gauche est « hors service », avec un ballon rouge à côté. Prends celui de droite, rempli de ballons, et monte : quand la lumière clignote, un clown ensanglanté surgit avec une machette, puis disparaît. Faisable à tout moment du jeu.", "new"],
+["La radio secrète The Vault", "Boîte de nuit The Vault, Downtown Vice City", "Au sud du Jack of Hearts, à l'ouest du NINE1NINE. Juste après l'entrée principale, scanne avec WAiNK l'affiche rouge au masque à gaz (R1). Tu débloques la station The Vault (house underground, techno, électro), en voiture et au casque. C'est l'une des 2 playlists uniques du 100 % ; l'autre, The Sniper of La Perle, demande de scanner 4 affiches.", "new"],
+["Les touristes disparus de Port Gellhorn", "Starlet Motel, chapitre 2", "Regarde les avis de disparition à gauche de Linda, la gérante, puis appelle la Kelly County Tip Line (Contacts > All Contacts). Le bunker couvert de végétation est en face de Burnout Scooters, à droite du garage de Moses : entre par le passage entre les deux barils rouges et photographie les cadres des 3 casiers. Corps à trouver : mobil-home bleu sous le château d'eau (plancher cassé à droite), coffre de la voiture rose à la casse près du Pay 'N' Spray, voiture immergée au bord d'un petit plan d'eau au sud-ouest. Après le rappel, retourne au bunker : vas-y seul pour améliorer la relation Jason–Lucia.", "new,Chap. 2"],
+["La planque des Exotic Animals", "Magasin d'alcool de Key Lento", "Après la demande de rhum de Shirley, reviens enquêter sur les bruits de l'arrière-boutique, escalade la clôture à côté, élimine les gardes et parle au perroquet. Butin : 1 300 $ dans la grille près du générateur, 900 $ dans le coffre, 100 $ dans la caisse.", "new,Chap. 1"],
+["L'entrepôt de South Vice-Dale", "Au sud de Hamlet, à ~3 miles de chez Jason", "La meilleure planque du début, ~13 000 $ en cash et marchandise. Lunettes dans la caisse jaune dehors ; à l'intérieur, SMG Type 9 (à droite de l'entrée) et fusil Duke 556, sac de billets marqués, cocaïne dans le van à nounours et sur les bureaux, pistolet Kalinga 50, 100 $ en caisse, et le coffre avec une carte Leroy Rook (~6 000 $ chez le prêteur sur gages). Ouvre le rideau arrière : un 2e van plein de cocaïne.", "new"],
+["Le motel délabré au tigre", "Au sud de Hamlet", "Suis les cris : un homme rampe dehors, un tigre en attaque un autre à l'intérieur. Butin : plus de 1 000 $ dans le coffre, ~640 $ de cocaïne, et le sniper Kingfisher's Laird 350 dans une mallette.", "new"],
+["L'entrepôt industriel aux cris", "Au sud de Hamlet, près de l'autoroute", "Pas d'icône sur la carte : guide-toi aux cris. Fouille les pièces : fusil à pompe Marabunta Grande Hobo dans une mallette, du cash sur une table et dans une caisse à outils jaune.", "new"]]},
+{id:"armes",n:"Armes",t:"Armes uniques",p:"Une fois ramassées, elles restent dans le casier d'armes de l'Ammu-Nation, partagées entre Jason et Lucia (accessoires non modifiables).",i:[
+["Revolver H&L .38 de Donnie", "Mission « Don Gone »", "Ouvre le coffre de la voiture et prends-le avant de la détruire, sinon il est perdu pour de bon.", "new,rat"],
+["Laird 350 du chasseur", "Route à l'ouest de Hamlet (Grassrivers), près de la grande route", "Repère un coup de feu : deux chasseurs, dont Todd, blessé. Conduis-le à l'hôpital avec leur pick-up, garé un peu plus loin.", "new"],
+["Kingfisher W22 Small Game Rifle", "Kingfisher Compound, Grassrivers", "Une fois que Donnie t'a parlé du braquage : arrive en bateau, nettoie le ponton, entre dans le bâtiment le plus proche de l'eau et ouvre la caisse sur le bureau.", "new"],
+["Kingfisher's Laird 350", "Motel délabré au sud de Hamlet", "La mallette dans la chambre du tigre (fiche dans Planques).", "new"],
+["Marabunta Grande Hobo Shotgun", "Entrepôt industriel au sud de Hamlet", "La mallette dans l'une des pièces (fiche dans Planques).", "new"],
+["Assassin Nipper .38", "Épave, pointe sud de l'île du sud-est, Permit Keys", "Au même endroit que la curiosité WAiNK Derelict Spy Vessel et une vieille note.", "new"],
+["Smuggler's Gorse 425", "Île la plus au nord des Permit Keys", "Longe la côte jusqu'au bateau de contrebandier abandonné et fouille autour.", "new"],
+["SMG Type 9, Duke 556 et Kalinga 50", "Entrepôt de South Vice-Dale", "À ramasser avec le reste du butin (fiche dans Planques).", "new"]]},
 {id:"tresors",n:"Épaves",t:"Épaves et trésors de Kenton",p:"33 découvertes sous-marines au total ; voici les sites connus, tous dans le comté de Mariana.",i:[
 ["Équipement et méthode","Island Dreams","Prends le Huntress de Kenton (amarré à Island Dreams) ou, après « Maritime Disputes », le Rugger Fortune. Bouteilles obligatoires. Pilote auto : Triangle deux fois. Détecteur de métaux avec L1, balaie au stick droit, nage lentement vers le bip, ramasse les reflets au fond. Vends les sets complets à Kenton : bonus bien plus gros qu'à l'unité.",""],
 ["Nuestra Señora del Ocio","Key Lento","Trouvée pendant la mission « Island Dreams ». Ramasse les 10 doublons pour la valider.","Chap. 1"],
@@ -167,7 +196,11 @@ const S=[
 ["Largages de Pilot Pete","Chapitre 3, puis régulier au 4","10 000 à 20 000 $ par vol : larguer des colis à des acheteurs dans un temps limité. Entraîne-toi au pilotage avant.","Chap. 3"],
 ["Banques et Payday Loans : attendre","Chapitre 3","Les billets peuvent contenir des packs d'encre qui explosent tant que tu n'as pas le brouilleur, obtenu au chapitre 3.","Chap. 3"],
 ["Les bons receleurs","Little Cuba et ailleurs","Trois catégories : narcotiques, bijoux, billets marqués. Yasmani (Little Cuba) paie bien bijoux et billets marqués, Tyrone les narcotiques.",""],
-["Les petites sources","Partout","Coffres de voiture, lockboxes sur les toits, bateaux échoués sur la côte (briques de coke), ATM arrachables avec un camion à treuil (bruyant). Les bastions de gangs paient gros mais demandent une vraie fusillade ou de l'infiltration.",""]]},
+["Les petites sources","Partout","Coffres de voiture, lockboxes sur les toits, bateaux échoués sur la côte (briques de coke), ATM arrachables avec un camion à treuil (bruyant). Les bastions de gangs paient gros mais demandent une vraie fusillade ou de l'infiltration.",""],
+["Fouiller les voitures en panne", "Routes de Leonida, au hasard", "Propose ton aide aux conducteurs en panne et jette un œil au coffre : souvent un sac de ~1 280 $ de narcotiques. Revends-le au Brian's Lockup, l'argent arrive dans ta boîte aux lettres le lendemain.", "new"],
+["Les crashs d'avion", "Suis la fumée (Grassrivers)", "~1 000 $ de cocaïne au sol sous l'épave en feu, plus un corps à fouiller et un pistolet lance-fusées. Pars vite : rivaux et police débarquent.", "new"],
+["Livrer à Moses sans une rayure", "Mo's Mod Shop, chapitre 2", "Bonus si la voiture arrive intacte ; les gros pick-up paient plus. Répétable.", "new,Chap. 2"],
+["Fin du chapitre 1 : ne garde pas ton cash", "Chapitre 1", "D'après Beebom, l'argent gagné au chapitre 1 est perdu à la fin du chapitre : dépense-le ou mets-le en banque avant d'avancer. Pas encore recoupé ailleurs.", "new,com,rat,Chap. 1"]]},
 {id:"keylento",n:"Key Lento",t:"Key Lento à la loupe",p:"Tous les objets de la zone de départ, rue par rue (la maison de Jason est dans Priorités).",i:[
 ["Carte NINE1NINE (Aimie)","The Rusty Anchor (NO)","Dans les toilettes de la Captain's Log Room. Sur place aussi : un adversaire de billard (bar, à gauche) et la borne d'arcade Bang For Your Buck en face du bar.",""],
 ["Montre de luxe et magazine Pêche","Dolphin Dr, maison de la fête","À l'étage, première chambre à gauche, sur la table près de la fenêtre.",""],
@@ -225,7 +258,15 @@ const S=[
 ["Mr. Raspberry Jam et nains de jardin","Boutiques de souvenirs des Keys","Sur les étagères.",""],
 ["Autocollants Lil' Probe'Inn","Pare-chocs des voitures","Référence à San Andreas.",""],
 ["Affiche Peekhole avec vrai QR code","Murs et devantures","Scannable avec ton vrai téléphone, il mène au site de Rockstar.",""],
-["Armoiries de Leonida","Un peu partout","On y voit quelqu'un se faire manger par un alligator.",""]]},
+["Armoiries de Leonida","Un peu partout","On y voit quelqu'un se faire manger par un alligator.",""],
+["La Fast and Furious de Paul Walker", "Garage d'une villa de Vespucci Island", "Une Mitsubishi Eclipse verte modifiée, conduisible : force le garage, démarre-la et pars avec.", "new"],
+["La plaque « ASS MAN »", "Fourrière de Hamlet", "La Phoenix rouge avec cette plaque et un flamant, clin d'œil à Seinfeld.", "new"],
+["Les Tortues Ninja", "Lake Tallaloko, East Lummox County (nord de Millport)", "Au bout d'un égout, quatre tortues à côté de boîtes de pizza et une substance verte : c'est la curiosité WAiNK « Intriguing Substance ».", "new,com"],
+["Le mystère du Chiliad, version Leonida", "Mission du début avec Donny et Brian", "En approchant du bar, deux hommes parlent d'un bunker à jetpack sous une montagne.", "new"],
+["Love Fist et l'hippopotame", "Starlet Motel", "Un autocollant Love Fist et une poubelle hippopotame violette, comme dans le Vice City de 2002.", "new"],
+["We Came Together", "Rayon d'un magasin d'électronique", "La parodie de The Last of Us, parmi les jeux en rayon.", "new"],
+["Le livre de Cairn Lake", "Livres de western (Red Dead)", "Un livre raconte la mort du hors-la-loi Flaco Hernandez à Cairn Lake, comme une mission d'Arthur Morgan. D'autres westerns sont à la Jacob's Tavern (Millport), au Brian's Marina (Key Lento) et dans un bâtiment au nord du Taco Bomb (West Kalaga).", "new"],
+["La rencontre Collateral", "Rencontre aléatoire en voiture", "Un inconnu façon Vincent (Tom Cruise dans Collateral) monte dans ta voiture et te prend en otage.", "new,com"]]},
 {id:"astuces",n:"Astuces",t:"Astuces de jeu",p:"Les réglages et réflexes qui changent tout.",i:[
 ["Difficulté plus douce sans perdre de trophées","Options > Réglages > Gameplay","Options 24 et 25 : Accessible Combat (tu encaisses moins, les ennemis plus) et Reduced Vehicle Damage.",""],
 ["Retrouver les commandes de GTA 5","Options > Réglages > Control Scheme","Choisis « Classic ».",""],
@@ -280,24 +321,25 @@ const save=()=>{try{localStorage.setItem(K,JSON.stringify(st))}catch(e){}};
 let cur="prio",hide=false,q="";
 const pin='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>';
 const tick='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>';
-const lab={rat:"Ratable",com:"Communauté",ue:"Ultimate"};
+const lab={rat:"Ratable",com:"Communauté",ue:"Ultimate",new:"Nouveau",maj:"Mis à jour"};
 const norm=s=>s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");
-S.forEach(s=>s.i.forEach((x,k)=>{x.id=s.id+"-"+k;x.txt=norm(x.slice(0,3).join(" ")+" "+(x[4]||[]).join(" "))}));
-const all=S.flatMap(s=>s.i);
+S.forEach(s=>s.i.forEach((x,k)=>{x.id=s.id+"-"+k;x.txt=norm(x.slice(0,3).join(" ")+" "+(x[4]||[]).join(" ")+" "+(x[3]||"").split(",").map(t=>lab[t]||t).join(" "))}));
+const all=S.flatMap(s=>s.i);const isNew=x=>/(^|,)(new|maj)(,|$)/.test(x[3]||"");const news=all.filter(isNew);
 const card=x=>{const tg=(x[3]||"").split(",").filter(Boolean).map(t=>`<span class="tag ${lab[t]?t:""}">${lab[t]||t}</span>`).join("");
 return `<article class="it${st[x.id]?" ok":""}" data-id="${x.id}"><button class="ck" aria-pressed="${!!st[x.id]}" aria-label="Marquer comme fait : ${x[0].replace(/"/g,"")}">${tick}</button><div><h3>${x[0]}</h3>${x[1]?`<div class="w">${pin}<span>${x[1]}</span></div>`:""}${x[4]?`<div class="code">${x[4][0]}</div>`:""}${x[2]?`<p class="d">${x[2]}</p>`:""}${tg?`<div class="tags">${tg}</div>`:""}</div></article>`};
 const done=a=>a.filter(x=>st[x.id]).length;
-function chips(){document.getElementById("chips").innerHTML=S.map(s=>`<button class="chip" data-s="${s.id}" aria-current="${s.id===cur&&!q}">${s.n}<small>${done(s.i)}/${s.i.length}</small></button>`).join("")}
+function chips(){document.getElementById("chips").innerHTML=`<button class="chip" data-s="new" aria-current="${cur==="new"&&!q}">Nouveautés<small>${done(news)}/${news.length}</small></button>`+S.map(s=>`<button class="chip" data-s="${s.id}" aria-current="${s.id===cur&&!q}">${s.n}<small>${done(s.i)}/${s.i.length}</small></button>`).join("")}
 function head(){const d=done(all),p=Math.round(d/all.length*100);document.getElementById("pct").textContent=p+" %";document.getElementById("cnt").textContent=d+" / "+all.length+" repérés";document.getElementById("gbar").style.width=p+"%"}
 function render(){const m=document.getElementById("main");const vis=a=>a.filter(x=>!(hide&&st[x.id]));
 if(q){const w=norm(q).split(/\s+/).filter(Boolean);let h="",n=0;S.forEach(s=>{const r=vis(s.i.filter(x=>w.every(t=>x.txt.includes(t))));if(r.length){n+=r.length;h+=`<div class="grp">${s.t} · ${r.length}</div>`+r.map(card).join("")}});
 m.innerHTML=`<div class="sh"><h2>Résultats</h2><p>${n} fiche${n>1?"s":""} pour « ${q.replace(/[&<>"']/g,"")} »</p></div>`+(h||`<p class="empty">Rien trouvé. Essaie un nom de lieu ou de comté.</p>`)}
+else if(cur==="new"){let g="";S.forEach(s=>{const r=vis(s.i.filter(isNew));if(r.length)g+=`<div class="grp">${s.t} · ${r.length}</div>`+r.map(card).join("")});m.innerHTML=`<div class="sh"><h2>Nouveautés du 25 novembre</h2><p>${news.length} fiches ajoutées ou complétées depuis la première version : portail vers le Vice City de 2002, clown du Haymarket, radio secrète, armes uniques, planques à cash…</p></div>`+(g||`<p class="empty">Tout est fait ici. Bien joué.</p>`)}
 else{const s=S.find(z=>z.id===cur),d=done(s.i),r=vis(s.i);m.innerHTML=`<div class="sh"><h2>${s.t}</h2><p>${s.p}</p><div class="bar"><i style="width:${Math.round(d/s.i.length*100)}%"></i></div><div class="meta">${d} sur ${s.i.length} faits</div></div>`+(r.length?r.map(card).join(""):`<p class="empty">Tout est fait ici. Bien joué.</p>`)}
 chips();head()}
 document.getElementById("chips").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;cur=b.dataset.s;q="";document.getElementById("q").value="";try{localStorage.setItem(K+"-tab",cur)}catch(e){}render();window.scrollTo({top:document.querySelector(".top").offsetTop,behavior:"smooth"})});
 document.getElementById("main").addEventListener("click",e=>{const b=e.target.closest(".ck");if(!b)return;const id=b.closest(".it").dataset.id;st[id]=!st[id];if(!st[id])delete st[id];save();
 const el=b.closest(".it");if(hide&&st[id]){render();return}el.classList.toggle("ok",!!st[id]);b.setAttribute("aria-pressed",!!st[id]);
-if(!q){const s=S.find(z=>z.id===cur),d=done(s.i);document.querySelector(".sh .bar i").style.width=Math.round(d/s.i.length*100)+"%";document.querySelector(".sh .meta").textContent=d+" sur "+s.i.length+" faits"}chips();head()});
+if(!q&&cur!=="new"){const s=S.find(z=>z.id===cur),d=done(s.i);document.querySelector(".sh .bar i").style.width=Math.round(d/s.i.length*100)+"%";document.querySelector(".sh .meta").textContent=d+" sur "+s.i.length+" faits"}chips();head()});
 document.getElementById("q").addEventListener("input",e=>{q=e.target.value.trim();render()});
 document.getElementById("hide").addEventListener("click",e=>{hide=!hide;e.currentTarget.setAttribute("aria-pressed",hide);render()});
 const rb=document.getElementById("reset");
@@ -305,7 +347,9 @@ rb.addEventListener("click",e=>{const id=e.target.id;
 if(id==="rs")rb.innerHTML='<span>Tout décocher, vraiment ?</span><button class="tg" id="rsy">Oui, tout effacer</button><button class="tg" id="rsn">Annuler</button>';
 if(id==="rsy"){st={};save();render()}
 if(id==="rsy"||id==="rsn")rb.innerHTML='<button class="tg" id="rs">Tout décocher</button>'});
-try{const t=localStorage.getItem(K+"-tab");if(t&&S.some(s=>s.id===t))cur=t}catch(e){}
+try{const t=localStorage.getItem(K+"-tab");if(t&&(t==="new"||S.some(s=>s.id===t)))cur=t;if(localStorage.getItem(K+"-maj")!=="2511"){cur="new";localStorage.setItem(K+"-maj","2511")}}catch(e){}
+document.getElementById("updb").textContent="Mis à jour le 25 nov. · "+news.length+" nouveautés";
+document.getElementById("updb").addEventListener("click",()=>{cur="new";q="";document.getElementById("q").value="";render();window.scrollTo({top:document.querySelector(".top").offsetTop,behavior:"smooth"})});
 render();
 }
 </script>
